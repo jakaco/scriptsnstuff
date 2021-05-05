@@ -1,4 +1,4 @@
-shsh#!/bin/bash
+#!/bin/bash
 
 echo This script requires youtube-dl and ffmpeg/avconv
 
