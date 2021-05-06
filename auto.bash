@@ -1,4 +1,4 @@
-docs.html#!/bin/bash
+#!/bin/bash
 
 echo This script requires links. It is also recommended to run this script with sudo.
 
