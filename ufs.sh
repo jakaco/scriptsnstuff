@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ -z "$1" ]
 then
-    echo "Usage: ufs [-h] [-g] system source target filesystem"
+    echo "Usage: ufs [-h] system source target filesystem"
     echo
     echo "ufs can create a bootable Linux or Windows USB drive using an ISO image."
     echo
@@ -77,7 +77,7 @@ then
                 varpart=g
             fi
         echo Wiping..
-        wipefs -a "$3"
+        sudo wipefs -a "$3"
         echo Formatting..
         (echo "$varpart"; echo w; echo q) | sudo fdisk "$3"
         partprobe
@@ -91,7 +91,7 @@ then
         if [ "$1" == windows ]
         then
             echo Wiping..
-            wipefs -a "$3"
+            sudo wipefs -a "$3"
             echo Writing..
             sudo woeusb -d "$2" "$3"
             echo Syncing..
